@@ -721,15 +721,17 @@
     .showcase-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
+      align-items: stretch;
     }
     .showcase-card {
-      min-height: 300px;
-      padding: 24px;
+      min-height: 240px;
+      padding: 28px 26px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       overflow: hidden;
+      position: relative;
     }
     .showcase-card::after {
       content: "";
@@ -739,11 +741,12 @@
       background: radial-gradient(circle, rgba(95,244,255,0.2), transparent 64%);
       opacity: 0;
       transition: opacity 0.25s ease;
+      pointer-events: none;
     }
     .showcase-card:hover::after { opacity: 1; }
-    .showcase-card h3 { font-size: 1.25rem; }
-    .showcase-card p { color: var(--muted); line-height: 1.75; margin-top: 10px; }
-    .showcase-card .links { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 1; }
+    .showcase-card .eyebrow { margin-bottom: 12px; }
+    .showcase-card h3 { font-size: 1.2rem; line-height: 1.3; font-weight: 800; }
+    .showcase-card p { color: var(--muted); line-height: 1.75; margin-top: 10px; font-size: 0.93rem; }
     .mini-btn { padding: 9px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); background: rgba(255,255,255,0.055); font-size: 0.8rem; font-weight: 900; }
 
     .education-grid {
@@ -1218,8 +1221,7 @@
               <span>Online food ordering</span><span>Table reservations</span><span>Gift card management</span><span>Razorpay payment integration</span><span>Admin dashboard</span><span>Email notifications</span><span>Supabase integration</span><span>Reservation management</span><span>Refund processing</span><span>Pickup order validation</span><span>Profile history tracking</span><span>Role-based admin access control</span><span>UI/UX optimization</span><span>SEO optimization</span><span>Frontend/backend improvements</span><span>AI-assisted debugging using Claude and Lovable</span>
             </div>
             <div class="project-actions">
-              <a class="btn magnetic" href="#contact">GitHub</a>
-              <a class="btn dark magnetic" href="#contact">Case Study</a>
+              
             </div>
           </article>
         </div>
@@ -1236,9 +1238,21 @@
           <p class="reveal">Mouse-follow glow, tilt interactions, gradient overlays, and clean conversion actions.</p>
         </div>
         <div class="showcase-grid">
-          <article class="showcase-card glass tilt reveal"><div><span class="eyebrow">SEO</span><h3>Organic Growth System</h3><p>Search visibility workflows across metadata, internal linking, keyword research, reporting, and off-page execution.</p></div><div class="links"><a class="mini-btn" href="#contact">GitHub</a><a class="mini-btn" href="#contact">Case Study</a></div></article>
-          <article class="showcase-card glass tilt reveal"><div><span class="eyebrow">Web</span><h3>Restaurant Management App</h3><p>Ordering, reservations, payments, admin access, refunds, profile history, and Supabase-backed management.</p></div><div class="links"><a class="mini-btn" href="#contact">GitHub</a><a class="mini-btn" href="#contact">Case Study</a></div></article>
-          <article class="showcase-card glass tilt reveal"><div><span class="eyebrow">UX</span><h3>Digital Experience Optimization</h3><p>Practical UI/UX improvements, content clarity, responsive fixes, and conversion-friendly web operations.</p></div><div class="links"><a class="mini-btn" href="#contact">GitHub</a><a class="mini-btn" href="#contact">Case Study</a></div></article>
+          <article class="showcase-card glass tilt reveal">
+            <span class="eyebrow">SEO</span>
+            <h3>Organic Growth System</h3>
+            <p>Search visibility workflows across metadata, internal linking, keyword research, reporting, and off-page execution.</p>
+          </article>
+          <article class="showcase-card glass tilt reveal">
+            <span class="eyebrow">Web</span>
+            <h3>Restaurant Management App</h3>
+            <p>Ordering, reservations, payments, admin access, refunds, profile history, and Supabase-backed management.</p>
+          </article>
+          <article class="showcase-card glass tilt reveal">
+            <span class="eyebrow">UX</span>
+            <h3>Digital Experience Optimization</h3>
+            <p>Practical UI/UX improvements, content clarity, responsive fixes, and conversion-friendly web operations.</p>
+          </article>
         </div>
       </div>
     </section>
