@@ -473,10 +473,9 @@ section { padding: 7rem 0; position: relative; }
 /* 3D TILT CARD */
 .hero-visual {
   position: relative; display: flex; justify-content: center; align-items: center;
-  padding: 2.25rem 2.75rem 2.75rem;
 }
 .hero-card-3d-wrap {
-  perspective: 1000px; width: 100%; max-width: 380px; position: relative; z-index: 1;
+  perspective: 1000px; width: 100%; max-width: 380px;
 }
 .hero-card {
   background: rgba(255,255,255,0.04);
@@ -543,8 +542,7 @@ section { padding: 7rem 0; position: relative; }
 .hero-card-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 1.25rem; }
 .hero-card-info {
   display: flex; align-items: center; gap: 0.75rem;
-  font-size: 0.82rem; color: var(--text2); margin-bottom: 0.55rem;
-  line-height: 1.45;
+  font-size: 0.8rem; color: var(--text2); margin-bottom: 0.5rem;
 }
 .hero-card-info-icon { font-size: 0.95rem; flex-shrink: 0; }
 .floating-chip {
@@ -556,15 +554,13 @@ section { padding: 7rem 0; position: relative; }
   display: flex; align-items: center; gap: 0.4rem;
   backdrop-filter: blur(10px);
   animation: chip-float 4s ease-in-out infinite;
-  z-index: 3;
-  white-space: nowrap;
 }
 .floating-chip.chip1 {
-  top: 0.75rem; right: 1.15rem;
+  top: -14px; right: -20px;
   animation-delay: 0s;
 }
 .floating-chip.chip2 {
-  bottom: 0.75rem; left: 1.15rem;
+  bottom: 20px; left: -30px;
   animation-delay: -2s;
 }
 .chip-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent3); box-shadow: 0 0 6px rgba(0,212,170,0.7); animation: dot-blink 1.5s infinite; }
@@ -892,8 +888,7 @@ section { padding: 7rem 0; position: relative; }
   font-size: 1.5rem; margin-bottom: 1.25rem;
 }
 .edu-degree {
-  font-family: var(--font-head); font-size: 1.05rem; font-weight: 800; margin-bottom: 0.35rem;
-  color: var(--text); line-height: 1.35;
+  font-family: var(--font-head); font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem;
 }
 .edu-school { font-size: 0.85rem; color: var(--text2); margin-bottom: 0.25rem; }
 .edu-period {
@@ -1059,10 +1054,6 @@ footer {
 }
 @media (max-width: 600px) {
   .skills-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-  .hero-visual { padding: 2rem 0.75rem 2.75rem; }
-  .hero-card-3d-wrap { max-width: min(280px, 100%); }
-  .floating-chip.chip1 { right: 1.25rem; }
-  .floating-chip.chip2 { left: 0.75rem; bottom: 0.55rem; }
   .hero-stats { flex-wrap: nowrap; }
   .hero-stat { padding: 0.9rem 1rem; }
   .hero-stat-num { font-size: 1.5rem; }
