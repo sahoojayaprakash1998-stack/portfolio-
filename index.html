@@ -31,7 +31,7 @@
       --green: #63f6a7;
       --gold: #ffd166;
       --shadow: 0 24px 90px rgba(0, 0, 0, 0.48);
-      --glass: blur(22px) saturate(145%);
+      --glass: blur(12px) saturate(130%);
       --radius: 24px;
       --nav-h: 78px;
     }
@@ -869,6 +869,14 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
     }
+
+    /* Performance optimizations */
+    nav, .glass { will-change: transform; contain: layout style; }
+    canvas { will-change: auto; }
+    .progress { will-change: width; }
+    .cursor-dot, .cursor-ring { will-change: left, top; }
+    /* Reduce ambient blur cost */
+    .ambient { filter: blur(60px); }
   </style>
 </head>
 <body>
@@ -1165,7 +1173,6 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script type="module">
     import * as THREE from "three";
 
@@ -1187,12 +1194,6 @@
     const mobilePanel = document.getElementById("mobilePanel");
     document.getElementById("menuToggle").addEventListener("click", () => mobilePanel.classList.toggle("open"));
     mobilePanel.querySelectorAll("a").forEach(link => link.addEventListener("click", () => mobilePanel.classList.remove("open")));
-
-    if (window.Lenis) {
-      const lenis = new Lenis({ duration: 1.1, smoothWheel: true, wheelMultiplier: 0.9 });
-      const raf = time => { lenis.raf(time); requestAnimationFrame(raf); };
-      requestAnimationFrame(raf);
-    }
 
     if (window.gsap) {
       gsap.registerPlugin(ScrollTrigger);
@@ -1253,19 +1254,29 @@
     });
 
     document.querySelectorAll(".magnetic").forEach(el => {
+      let magRaf = null;
       el.addEventListener("mousemove", e => {
-        const rect = el.getBoundingClientRect();
-        el.style.transform = `translate(${(e.clientX - rect.left - rect.width / 2) * 0.12}px, ${(e.clientY - rect.top - rect.height / 2) * 0.18}px)`;
+        if (magRaf) return;
+        magRaf = requestAnimationFrame(() => {
+          magRaf = null;
+          const rect = el.getBoundingClientRect();
+          el.style.transform = `translate(${(e.clientX - rect.left - rect.width / 2) * 0.12}px, ${(e.clientY - rect.top - rect.height / 2) * 0.18}px)`;
+        });
       });
       el.addEventListener("mouseleave", () => { el.style.transform = ""; });
     });
 
     document.querySelectorAll(".tilt").forEach(card => {
+      let tiltRaf = null;
       card.addEventListener("mousemove", e => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(1000px) rotateX(${y * -8}deg) rotateY(${x * 8}deg) translateY(-4px)`;
+        if (tiltRaf) return;
+        tiltRaf = requestAnimationFrame(() => {
+          tiltRaf = null;
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.transform = `perspective(1000px) rotateX(${y * -8}deg) rotateY(${x * 8}deg) translateY(-4px)`;
+        });
       });
       card.addEventListener("mouseleave", () => { card.style.transform = ""; });
     });
@@ -1323,7 +1334,7 @@
     const camera = new THREE.PerspectiveCamera(58, innerWidth / innerHeight, 0.1, 100);
     camera.position.set(0, 0, 7);
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 1.25));
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 1));
     renderer.setSize(innerWidth, innerHeight);
 
     const group = new THREE.Group();
@@ -1367,7 +1378,15 @@
       pointer.x = (e.clientX / innerWidth - 0.5) * 2;
       pointer.y = (e.clientY / innerHeight - 0.5) * 2;
     }, { passive: true });
-    function animate3d(time) {
+    let heroVisible = true;
+    const heroObserver = new IntersectionObserver(entries => {
+      heroVisible = entries[0].isIntersecting;
+    }, { threshold: 0.01 });
+    heroObserver.observe(canvas);
+
+    function animate3d_guarded(time) {
+      requestAnimationFrame(animate3d_guarded);
+      if (!heroVisible) return;
       group.rotation.y += 0.0018;
       group.rotation.x += (pointer.y * 0.12 - group.rotation.x) * 0.02;
       group.rotation.z += (pointer.x * -0.08 - group.rotation.z) * 0.02;
@@ -1380,9 +1399,8 @@
       ringOne.rotation.z += 0.0025;
       ringTwo.rotation.y -= 0.002;
       renderer.render(scene, camera);
-      requestAnimationFrame(animate3d);
     }
-    animate3d(0);
+    animate3d_guarded(0);
     window.addEventListener("resize", () => {
       camera.aspect = innerWidth / innerHeight;
       camera.updateProjectionMatrix();
