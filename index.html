@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -413,14 +413,14 @@
     }
     .profile-card {
       position: relative;
-      padding: 28px 24px;
+      padding: 28px 24px 34px;
       border: 1px solid var(--line-strong);
       border-radius: 34px;
       background: linear-gradient(155deg, rgba(255,255,255,0.16), rgba(255,255,255,0.055));
       backdrop-filter: var(--glass);
       box-shadow: var(--shadow);
       transform-style: preserve-3d;
-      overflow: hidden;
+      overflow: visible;
     }
     .profile-card::before {
       content: "";
@@ -430,6 +430,7 @@
       border-radius: inherit;
       background: linear-gradient(135deg, rgba(95,244,255,0.5), transparent, rgba(255,106,213,0.42));
       opacity: 0.75;
+      pointer-events: none;
     }
     .avatar-orb {
       display: grid;
@@ -443,14 +444,16 @@
                   linear-gradient(135deg, var(--cyan), var(--violet), var(--pink)) border-box;
       box-shadow: 0 0 40px rgba(95,244,255,0.3), 0 0 80px rgba(165,108,255,0.15);
       overflow: hidden;
+      position: relative;
+      z-index: 1;
       color: #08111c;
       font-family: Sora, sans-serif;
       font-size: 3.8rem;
       font-weight: 800;
     }
-    .profile-card h3 { font-size: 1.25rem; text-align: center; line-height: 1.3; }
-    .profile-role { margin-top: 8px; text-align: center; color: var(--muted); font-weight: 700; }
-    .profile-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 22px; }
+    .profile-card h3 { font-size: 1.25rem; text-align: center; line-height: 1.3; position: relative; z-index: 1; }
+    .profile-role { margin-top: 8px; text-align: center; color: var(--muted); font-weight: 700; position: relative; z-index: 1; }
+    .profile-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 18px; position: relative; z-index: 1; }
     .profile-pills span {
       padding: 8px 10px;
       border: 1px solid var(--line);
@@ -464,7 +467,9 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      margin-top: 24px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
     }
     .profile-stats div {
       padding: 14px 10px;
