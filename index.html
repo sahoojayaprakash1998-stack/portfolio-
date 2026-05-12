@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sahoo Jayaprakash Prafulla Kumar — SEO Executive, Website Management & Digital Marketing Professional with 2.5 years of experience driving organic growth.">
+<meta name="keywords" content="SEO Executive, Digital Marketing, Website Management, Technical SEO, On-Page SEO, Off-Page SEO, Bhubaneswar">
+<meta name="author" content="Sahoo Jayaprakash Prafulla Kumar">
+<meta property="og:title" content="Sahoo Jayaprakash | SEO Executive & Digital Specialist">
+<meta property="og:description" content="Driving organic growth through strategy, data & creativity. 2.5 years of SEO expertise.">
+<meta property="og:type" content="website">
+<title>Sahoo Jayaprakash Prafulla Kumar | SEO Executive & Digital Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080b14;
+  --bg2: #0d1120;
+  --bg3: #111827;
+  --surface: rgba(255,255,255,0.04);
+  --surface2: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.14);
+  --accent: #4f8ef7;
+  --accent2: #7c5cfc;
+  --accent3: #00d4aa;
+  --gold: #f0a500;
+  --text: #f0f4ff;
+  --text2: #8892a8;
+  --text3: #5a647a;
+  --grad: linear-gradient(135deg, #4f8ef7, #7c5cfc);
+  --grad2: linear-gradient(135deg, #4f8ef7 0%, #00d4aa 100%);
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --shadow: 0 4px 40px rgba(0,0,0,0.5);
+  --glow: 0 0 60px rgba(79,142,247,0.15);
+}
+[data-theme="light"] {
+  --bg: #f5f7ff;
+  --bg2: #eef1fa;
+  --bg3: #e8ecf8;
+  --surface: rgba(0,0,0,0.03);
+  --surface2: rgba(0,0,0,0.055);
+  --border: rgba(0,0,0,0.07);
+  --border2: rgba(0,0,0,0.13);
+  --text: #111827;
+  --text2: #4a5568;
+  --text3: #9aa3b5;
+  --glow: 0 0 60px rgba(79,142,247,0.08);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* LOADER */
+#loader {
+  position: fixed; inset: 0; background: var(--bg); z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+#loader.hidden { opacity: 0; visibility: hidden; }
+.loader-inner {
+  text-align: center;
+}
+.loader-logo {
+  font-family: var(--font-head);
+  font-size: 2.5rem; font-weight: 800;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+.loader-bar {
+  margin: 1.5rem auto 0;
+  width: 160px; height: 2px;
+  background: var(--border2); border-radius: 2px; overflow: hidden;
+}
+.loader-bar-fill {
+  height: 100%;
+  background: var(--grad);
+  animation: load 1.6s ease-in-out forwards;
+}
+@keyframes load { from { width: 0; } to { width: 100%; } }
+@keyframes pulse { 0%,100% { opacity: 0.7; } 50% { opacity: 1; } }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+  background: rgba(8,11,20,0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+[data-theme="light"] nav { background: rgba(245,247,255,0.8); }
+.nav-logo {
+  font-family: var(--font-head);
+  font-size: 1.3rem; font-weight: 800;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a {
+  font-size: 0.875rem; font-weight: 500; color: var(--text2);
+  transition: color 0.2s; letter-spacing: 0.02em;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.theme-btn {
+  background: var(--surface2); border: 1px solid var(--border2);
+  color: var(--text2); width: 38px; height: 38px;
+  border-radius: 50%; cursor: pointer; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+.hamburger {
+  display: none; background: none; border: none;
+  cursor: pointer; padding: 4px; color: var(--text);
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: currentColor; margin: 5px 0;
+  transition: all 0.3s; border-radius: 2px;
+}
+.mobile-menu {
+  display: none; position: fixed; top: 64px; left: 0; right: 0;
+  background: var(--bg2); border-bottom: 1px solid var(--border);
+  padding: 1.5rem 5%; z-index: 99;
+  flex-direction: column; gap: 1rem;
+  transform: translateY(-10px); opacity: 0;
+  transition: all 0.3s;
+}
+.mobile-menu.open { display: flex; transform: translateY(0); opacity: 1; }
+.mobile-menu a { color: var(--text2); font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+
+/* SECTIONS */
+section { padding: 6rem 0; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 5%; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.25);
+  color: var(--accent); border-radius: 50px;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em;
+  padding: 0.3rem 1rem; margin-bottom: 1.25rem; text-transform: uppercase;
+}
+.section-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: dot-pulse 1.5s ease-in-out infinite; }
+@keyframes dot-pulse { 0%,100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.3); } }
+.section-title {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800; line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.section-sub { color: var(--text2); font-size: 1.05rem; max-width: 560px; }
+.gradient-text { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.gradient-text2 { background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* HERO */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 80px;
+  position: relative; overflow: hidden;
+}
+.hero-orb1 {
+  position: absolute; width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,142,247,0.12) 0%, transparent 70%);
+  top: -200px; right: -200px; pointer-events: none;
+}
+.hero-orb2 {
+  position: absolute; width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,92,252,0.1) 0%, transparent 70%);
+  bottom: -150px; left: -100px; pointer-events: none;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: rgba(0,212,170,0.1); border: 1px solid rgba(0,212,170,0.3);
+  color: var(--accent3); border-radius: 50px;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em;
+  padding: 0.35rem 1rem; margin-bottom: 1.5rem;
+}
+.hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent3); animation: dot-pulse 1.5s ease-in-out infinite; }
+.hero-title {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 800; line-height: 1.1;
+  margin-bottom: 1rem; letter-spacing: -0.02em;
+}
+.hero-role {
+  font-size: 1.1rem; color: var(--text2); margin-bottom: 1.25rem;
+  letter-spacing: 0.01em;
+}
+.hero-role span { color: var(--accent); font-weight: 500; }
+.hero-tagline {
+  font-size: 1.05rem; color: var(--text2); margin-bottom: 2.5rem;
+  line-height: 1.7; max-width: 500px;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+.btn-primary {
+  background: var(--grad); color: #fff; border: none;
+  padding: 0.85rem 2rem; border-radius: 50px;
+  font-family: var(--font-body); font-size: 0.925rem; font-weight: 600;
+  cursor: pointer; transition: all 0.3s;
+  box-shadow: 0 4px 24px rgba(79,142,247,0.35);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(79,142,247,0.45); }
+.btn-secondary {
+  background: var(--surface2); color: var(--text);
+  border: 1px solid var(--border2);
+  padding: 0.85rem 2rem; border-radius: 50px;
+  font-family: var(--font-body); font-size: 0.925rem; font-weight: 600;
+  cursor: pointer; transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-secondary:hover { background: var(--surface); border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent; color: var(--accent3);
+  border: 1px solid rgba(0,212,170,0.4);
+  padding: 0.85rem 2rem; border-radius: 50px;
+  font-family: var(--font-body); font-size: 0.925rem; font-weight: 600;
+  cursor: pointer; transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-outline:hover { background: rgba(0,212,170,0.1); transform: translateY(-2px); }
+.hero-stats {
+  display: flex; gap: 2.5rem;
+}
+.hero-stat-num {
+  font-family: var(--font-head);
+  font-size: 2rem; font-weight: 800;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-stat-label { font-size: 0.8rem; color: var(--text3); letter-spacing: 0.04em; }
+.hero-visual {
+  position: relative; display: flex; justify-content: center; align-items: center;
+}
+.hero-card {
+  background: var(--surface); border: 1px solid var(--border2);
+  border-radius: var(--radius-lg); padding: 2rem;
+  width: 100%; max-width: 380px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+.hero-avatar {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: var(--grad); margin: 0 auto 1.25rem;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-size: 1.8rem; font-weight: 800;
+  color: #fff; letter-spacing: -0.02em;
+}
+.hero-card-name {
+  font-family: var(--font-head); font-size: 1.15rem; font-weight: 700;
+  text-align: center; margin-bottom: 0.25rem;
+}
+.hero-card-role {
+  font-size: 0.8rem; color: var(--text3); text-align: center; margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+}
+.hero-card-tags {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem;
+}
+.hero-card-tag {
+  background: rgba(79,142,247,0.12); border: 1px solid rgba(79,142,247,0.2);
+  color: var(--accent); border-radius: 50px;
+  font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.75rem; letter-spacing: 0.04em;
+}
+.hero-card-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 1.25rem; }
+.hero-card-detail {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.82rem; color: var(--text2); margin-bottom: 0.6rem;
+}
+.hero-card-detail-icon { color: var(--accent); font-size: 1rem; flex-shrink: 0; }
+.floating-badge {
+  position: absolute;
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: var(--radius); padding: 0.6rem 1rem;
+  font-size: 0.78rem; font-weight: 600;
+  box-shadow: var(--shadow); display: flex; align-items: center; gap: 0.5rem;
+}
+.floating-badge.top { top: -16px; right: -24px; }
+.floating-badge.bottom { bottom: 24px; left: -36px; }
+.floating-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent3); animation: dot-pulse 1.5s infinite; }
+
+/* ABOUT */
+#about { background: var(--bg2); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: center; }
+.about-image-wrap {
+  position: relative;
+}
+.about-image-box {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(79,142,247,0.15), rgba(124,92,252,0.15));
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.about-image-box::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(79,142,247,0.08) 0%, rgba(0,212,170,0.08) 100%);
+}
+.about-avatar-large {
+  width: 120px; height: 120px; border-radius: 50%;
+  background: var(--grad); z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-size: 2.8rem; font-weight: 800;
+  color: #fff;
+}
+.about-stat-card {
+  position: absolute;
+  background: var(--bg); border: 1px solid var(--border2);
+  border-radius: var(--radius); padding: 1rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+.about-stat-card.c1 { bottom: -20px; right: -20px; }
+.about-stat-card.c2 { top: 30px; left: -20px; }
+.about-stat-num {
+  font-family: var(--font-head); font-size: 1.8rem; font-weight: 800;
+  background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.about-stat-label { font-size: 0.78rem; color: var(--text3); }
+.about-text h3 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+.about-text p { color: var(--text2); margin-bottom: 1rem; }
+.about-highlights { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.75rem 0; }
+.about-highlight {
+  display: flex; align-items: flex-start; gap: 1rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1rem 1.25rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.about-highlight:hover { border-color: var(--border2); transform: translateX(4px); }
+.about-highlight-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: rgba(79,142,247,0.15); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+.about-highlight-text strong { font-size: 0.9rem; display: block; margin-bottom: 0.2rem; }
+.about-highlight-text span { font-size: 0.82rem; color: var(--text3); }
+
+/* SKILLS */
+#skills { }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.skill-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.3s; cursor: default;
+  position: relative; overflow: hidden;
+}
+.skill-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--grad);
+  opacity: 0; transition: opacity 0.3s;
+}
+.skill-card:hover {
+  border-color: rgba(79,142,247,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(79,142,247,0.15);
+}
+.skill-card:hover::before { opacity: 0.05; }
+.skill-icon {
+  font-size: 2rem; margin-bottom: 0.75rem;
+  display: block; position: relative;
+}
+.skill-name {
+  font-size: 0.825rem; font-weight: 600; color: var(--text);
+  position: relative; letter-spacing: 0.01em;
+}
+.skill-bar-wrap { margin-top: 0.6rem; height: 3px; background: var(--border); border-radius: 2px; position: relative; overflow: hidden; }
+.skill-bar { height: 100%; background: var(--grad); border-radius: 2px; transition: width 1s ease; }
+
+/* EXPERIENCE */
+#experience { background: var(--bg2); }
+.timeline { position: relative; padding-left: 2.5rem; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
+  width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+  border-radius: 2px;
+}
+.timeline-item {
+  position: relative; margin-bottom: 2.5rem;
+}
+.timeline-dot {
+  position: absolute; left: -2.7rem; top: 4px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--grad); box-shadow: 0 0 0 4px rgba(79,142,247,0.2);
+  z-index: 1;
+}
+.timeline-content {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.75rem;
+  transition: border-color 0.2s;
+}
+.timeline-content:hover { border-color: var(--border2); }
+.timeline-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;
+}
+.timeline-role {
+  font-family: var(--font-head); font-size: 1.15rem; font-weight: 700;
+}
+.timeline-period {
+  background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.2);
+  color: var(--accent); border-radius: 50px;
+  font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.85rem;
+  white-space: nowrap;
+}
+.timeline-company { font-size: 0.9rem; color: var(--text2); margin-bottom: 1.25rem; }
+.timeline-achievements { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.timeline-achievements li {
+  display: flex; gap: 0.75rem; align-items: flex-start;
+  font-size: 0.88rem; color: var(--text2);
+}
+.timeline-achievements li::before { content: '▸'; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+.timeline-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+.timeline-tag {
+  background: rgba(0,212,170,0.1); border: 1px solid rgba(0,212,170,0.2);
+  color: var(--accent3); border-radius: 50px;
+  font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.75rem;
+}
+
+/* PROJECT */
+#project { }
+.project-showcase {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 3rem; align-items: center; margin-top: 3rem;
+}
+.project-visual {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(79,142,247,0.1), rgba(0,212,170,0.1));
+  border: 1px solid var(--border2);
+  padding: 2.5rem 2rem; min-height: 400px;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.project-visual::before {
+  content: ''; position: absolute; top: -60%; right: -30%;
+  width: 350px; height: 350px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,212,170,0.12), transparent 70%);
+  pointer-events: none;
+}
+.project-visual-title {
+  font-family: var(--font-head); font-size: 1.5rem; font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.project-visual-sub { color: var(--text2); font-size: 0.88rem; margin-bottom: 2rem; }
+.project-feature-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+}
+.project-feature {
+  background: rgba(0,0,0,0.2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0.75rem;
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.78rem; font-weight: 500;
+  transition: border-color 0.2s;
+}
+[data-theme="light"] .project-feature { background: rgba(255,255,255,0.5); }
+.project-feature:hover { border-color: rgba(0,212,170,0.3); }
+.project-feature-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent3); flex-shrink: 0; }
+.project-info h3 { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; }
+.project-info p { color: var(--text2); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.8; }
+.project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
+.tech-pill {
+  background: var(--surface2); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 0.3rem 0.75rem;
+  font-size: 0.78rem; font-weight: 600; color: var(--text2);
+}
+.project-highlights { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+.project-highlight-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+}
+.phi-icon {
+  width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+  background: rgba(79,142,247,0.15); font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.phi-text strong { font-size: 0.85rem; display: block; }
+.phi-text span { font-size: 0.8rem; color: var(--text3); }
+
+/* PORTFOLIO */
+#portfolio { background: var(--bg2); }
+.portfolio-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.portfolio-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: all 0.3s; group: '';
+}
+.portfolio-card:hover { transform: translateY(-6px); border-color: var(--border2); box-shadow: var(--shadow); }
+.portfolio-img {
+  height: 200px;
+  background: linear-gradient(135deg, var(--c1, #1a2744), var(--c2, #1a3a44));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; position: relative; overflow: hidden;
+}
+.portfolio-img::after {
+  content: 'LIVE PREVIEW';
+  position: absolute; bottom: -30px; left: 0; right: 0;
+  text-align: center; font-size: 0.7rem; letter-spacing: 0.12em; font-weight: 700;
+  color: #fff; background: rgba(79,142,247,0.85);
+  padding: 0.4rem;
+  transition: bottom 0.3s;
+}
+.portfolio-card:hover .portfolio-img::after { bottom: 0; }
+.portfolio-body { padding: 1.5rem; }
+.portfolio-category {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.4rem;
+}
+.portfolio-title { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+.portfolio-desc { font-size: 0.83rem; color: var(--text2); margin-bottom: 1.25rem; line-height: 1.6; }
+.portfolio-actions { display: flex; gap: 0.75rem; }
+.pa-btn {
+  flex: 1; text-align: center;
+  padding: 0.55rem 1rem; border-radius: 8px;
+  font-size: 0.8rem; font-weight: 600; cursor: pointer;
+  transition: all 0.2s; border: 1px solid var(--border2);
+  background: var(--surface2); color: var(--text2);
+}
+.pa-btn:hover { border-color: var(--accent); color: var(--accent); }
+.pa-btn.primary { background: var(--grad); border: none; color: #fff; }
+.pa-btn.primary:hover { opacity: 0.9; transform: none; }
+
+/* TESTIMONIALS */
+#testimonials { }
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.testimonial-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 2rem;
+  transition: all 0.3s; position: relative;
+}
+.testimonial-card:hover { border-color: var(--border2); transform: translateY(-4px); }
+.testimonial-quote {
+  font-size: 2.5rem; font-family: Georgia, serif; line-height: 1;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 0.75rem;
+}
+.testimonial-text {
+  font-size: 0.9rem; color: var(--text2); line-height: 1.75; margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.testimonial-author { display: flex; align-items: center; gap: 0.875rem; }
+.testimonial-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--grad); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.9rem; color: #fff;
+}
+.testimonial-name { font-weight: 600; font-size: 0.9rem; }
+.testimonial-role { font-size: 0.78rem; color: var(--text3); }
+.testimonial-stars { margin-bottom: 0.75rem; color: var(--gold); font-size: 0.85rem; }
+
+/* CONTACT */
+#contact { background: var(--bg2); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; }
+.contact-info h3 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; }
+.contact-info p { color: var(--text2); font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.75; }
+.contact-items { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+.contact-item {
+  display: flex; align-items: center; gap: 1rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1rem 1.25rem;
+  transition: all 0.2s; text-decoration: none;
+}
+.contact-item:hover { border-color: var(--border2); transform: translateX(4px); }
+.ci-icon {
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  background: rgba(79,142,247,0.12); display: flex;
+  align-items: center; justify-content: center; font-size: 1.1rem;
+}
+.ci-label { font-size: 0.72rem; color: var(--text3); margin-bottom: 0.1rem; }
+.ci-val { font-size: 0.88rem; font-weight: 500; color: var(--text); }
+.social-links { display: flex; gap: 0.75rem; }
+.social-link {
+  width: 42px; height: 42px; border-radius: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; transition: all 0.2s; color: var(--text2);
+  text-decoration: none;
+}
+.social-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-label { font-size: 0.8rem; font-weight: 600; color: var(--text2); letter-spacing: 0.03em; }
+.form-input, .form-textarea {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0.85rem 1rem;
+  font-family: var(--font-body); font-size: 0.9rem; color: var(--text);
+  transition: all 0.2s; outline: none; resize: none;
+}
+.form-input:focus, .form-textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,142,247,0.1); }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--text3); }
+.form-textarea { min-height: 130px; }
+.form-submit {
+  background: var(--grad); color: #fff; border: none;
+  padding: 1rem 2rem; border-radius: 50px;
+  font-family: var(--font-body); font-size: 0.925rem; font-weight: 600;
+  cursor: pointer; transition: all 0.3s;
+  box-shadow: 0 4px 24px rgba(79,142,247,0.35);
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(79,142,247,0.45); }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-copy { font-size: 0.83rem; color: var(--text3); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.83rem; color: var(--text3); transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent); }
+
+/* ANIMATIONS */
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.fade-up-delay-1 { transition-delay: 0.1s; }
+.fade-up-delay-2 { transition-delay: 0.2s; }
+.fade-up-delay-3 { transition-delay: 0.3s; }
+.stagger-child { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.stagger-child.visible { opacity: 1; transform: translateY(0); }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-grid, .about-grid, .project-showcase, .contact-grid { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .about-image-wrap { display: none; }
+  .project-showcase .project-visual { min-height: 280px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  .hero-ctas { flex-direction: column; }
+  .btn-primary, .btn-secondary, .btn-outline { width: 100%; justify-content: center; }
+  .hero-stat-num { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">SJP</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">SJP Kumar</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#project">Project</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">🌙</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#project" onclick="closeMobile()">Project</a>
+  <a href="#portfolio" onclick="closeMobile()">Portfolio</a>
+  <a href="#testimonials" onclick="closeMobile()">Testimonials</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content fade-up">
+        <div class="hero-badge"><span></span>Available for New Opportunities</div>
+        <h1 class="hero-title">
+          Sahoo <span class="gradient-text">Jayaprakash</span><br>Prafulla Kumar
+        </h1>
+        <p class="hero-role">
+          <span>SEO Executive</span> &nbsp;·&nbsp; Website Management &nbsp;·&nbsp; Digital Marketing
+        </p>
+        <p class="hero-tagline">
+          Turning search intent into business growth — 2.5 years of driving measurable organic visibility, technical precision, and data-backed digital strategies.
+        </p>
+        <div class="hero-ctas">
+          <a href="mailto:sahoojayaprakash1998@gmail.com" class="btn-primary">✉️ Hire Me</a>
+          <a href="#" class="btn-secondary" id="downloadCV">⬇ Download CV</a>
+          <a href="#contact" class="btn-outline">📞 Contact Me</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">2.5+</div>
+            <div class="hero-stat-label">Years Experience</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">10+</div>
+            <div class="hero-stat-label">Sites Managed</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-label">Skills Mastered</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up fade-up-delay-2">
+        <div class="floating-badge top">
+          <div class="floating-dot"></div>
+          <span>Open to Work</span>
+        </div>
+        <div class="hero-card">
+          <div class="hero-avatar">SJ</div>
+          <div class="hero-card-name">Sahoo Jayaprakash</div>
+          <div class="hero-card-role">SEO Executive & Digital Specialist</div>
+          <div class="hero-card-tags">
+            <span class="hero-card-tag">On-Page SEO</span>
+            <span class="hero-card-tag">Technical SEO</span>
+            <span class="hero-card-tag">Off-Page SEO</span>
+            <span class="hero-card-tag">Analytics</span>
+            <span class="hero-card-tag">Web Mgmt</span>
+          </div>
+          <hr class="hero-card-divider">
+          <div class="hero-card-detail"><span class="hero-card-detail-icon">📍</span>Bhubaneswar, Odisha, India</div>
+          <div class="hero-card-detail"><span class="hero-card-detail-icon">💼</span>SEOCZAR IT Services Pvt. Ltd</div>
+          <div class="hero-card-detail"><span class="hero-card-detail-icon">🎓</span>MCA — GIFT, Bhubaneswar</div>
+        </div>
+        <div class="floating-badge bottom">
+          📈 <span>SEO Performance: <strong style="color:var(--accent3)">↑ 140%</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap fade-up">
+        <div class="about-image-box">
+          <div class="about-avatar-large">SJ</div>
+        </div>
+        <div class="about-stat-card c1">
+          <div class="about-stat-num">2.5+</div>
+          <div class="about-stat-label">Years in SEO</div>
+        </div>
+        <div class="about-stat-card c2">
+          <div class="about-stat-num">10+</div>
+          <div class="about-stat-label">Clients Served</div>
+        </div>
+      </div>
+      <div class="about-text fade-up fade-up-delay-1">
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title">SEO Strategist &<br><span class="gradient-text">Digital Growth Expert</span></h2>
+        <p>With 2.5 years of hands-on experience in SEO, digital marketing, and website management, I specialize in building organic visibility that translates directly into business outcomes — not vanity metrics.</p>
+        <p>My approach combines technical precision with content strategy: from crawling architecture to keyword ecosystems, from link authority to conversion pathways. I don't just track rankings — I track what rankings do to the bottom line.</p>
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <div class="about-highlight-icon">🔍</div>
+            <div class="about-highlight-text">
+              <strong>Technical SEO Specialist</strong>
+              <span>Core Web Vitals, schema markup, crawl optimization, site architecture</span>
+            </div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">📊</div>
+            <div class="about-highlight-text">
+              <strong>Data-Driven Strategist</strong>
+              <span>Google Analytics 4, Search Console, Ahrefs, competitor gap analysis</span>
+            </div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">🌐</div>
+            <div class="about-highlight-text">
+              <strong>Full-Spectrum Web Management</strong>
+              <span>CMS, performance optimization, UX improvements, Supabase & Razorpay integration</span>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary" style="display:inline-flex; width:fit-content;">Let's Work Together →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 1rem;">
+      <div class="section-tag" style="margin: 0 auto 1.25rem;">Technical Skills</div>
+    </div>
+    <h2 class="section-title fade-up" style="text-align:center;">My <span class="gradient-text2">Expertise</span></h2>
+    <p class="section-sub fade-up fade-up-delay-1" style="text-align:center; margin: 0 auto;">Tools, platforms, and disciplines I use to deliver measurable digital results.</p>
+    <div class="skills-grid" id="skillsGrid">
+      <div class="skill-card stagger-child"><span class="skill-icon">📈</span><div class="skill-name">SEO Strategy</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="92%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">🔍</span><div class="skill-name">On-Page SEO</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="95%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">🔗</span><div class="skill-name">Off-Page SEO</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="88%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">⚙️</span><div class="skill-name">Technical SEO</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="85%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">📊</span><div class="skill-name">Google Analytics</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="90%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">🖥️</span><div class="skill-name">Search Console</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="93%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">🎯</span><div class="skill-name">Ahrefs</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="82%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">🔑</span><div class="skill-name">Keyword Research</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="94%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">✍️</span><div class="skill-name">Content Writing</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="80%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">📱</span><div class="skill-name">Social Media Mktg</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="78%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">🌐</span><div class="skill-name">Website Management</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="88%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">🗄️</span><div class="skill-name">Supabase</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="70%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">💳</span><div class="skill-name">Razorpay Integration</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="72%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">🎨</span><div class="skill-name">UI/UX Optimization</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="77%"></div></div></div>
+      <div class="skill-card stagger-child"><span class="skill-icon">💻</span><div class="skill-name">HTML / CSS Basics</div><div class="skill-bar-wrap"><div class="skill-bar" style="width:0" data-w="75%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-tag">Career</div>
+    <h2 class="section-title fade-up">Professional <span class="gradient-text">Experience</span></h2>
+    <p class="section-sub fade-up fade-up-delay-1">2.5 years of driving organic growth and digital strategy for multiple client verticals.</p>
+    <div class="timeline" style="margin-top: 3rem;">
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div class="timeline-role">SEO Executive</div>
+            <div class="timeline-period">Nov 2023 – Nov 2025</div>
+          </div>
+          <div class="timeline-company">SEOCZAR IT Services Pvt. Ltd · Bhubaneswar, Odisha</div>
+          <ul class="timeline-achievements">
+            <li>Managed on-page SEO for 10+ client websites, optimizing metadata, heading hierarchy, internal linking structures, and content architecture — resulting in measurable improvements in SERP visibility and CTR.</li>
+            <li>Executed comprehensive off-page SEO and link-building campaigns, improving domain authority scores and securing high-quality backlinks across competitive niches.</li>
+            <li>Conducted in-depth keyword research using Ahrefs and Google Trends, delivering targeted content strategies aligned with client business goals and search intent mapping.</li>
+            <li>Developed and implemented social media marketing strategies that increased brand awareness and audience engagement across LinkedIn, Instagram, and Facebook platforms.</li>
+            <li>Monitored and analyzed performance data via Google Analytics 4 and Google Search Console; produced actionable monthly reports to optimize ongoing campaign effectiveness.</li>
+            <li>Collaborated cross-functionally with content writers and developers to integrate technical SEO best practices into brand campaigns and new website launches.</li>
+            <li>Led technical SEO audits identifying crawl issues, duplicate content, and Core Web Vitals deficiencies — implementing fixes that improved page speed scores by 30–40%.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Google Analytics</span>
+            <span class="timeline-tag">Ahrefs</span>
+            <span class="timeline-tag">Search Console</span>
+            <span class="timeline-tag">Technical SEO</span>
+            <span class="timeline-tag">Link Building</span>
+            <span class="timeline-tag">Content Strategy</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item fade-up fade-up-delay-1">
+        <div class="timeline-dot" style="background: var(--grad2);"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div class="timeline-role">Full-Stack Web Developer <span style="font-weight:400; font-size:0.9rem; color:var(--text3)">(Self-Directed)</span></div>
+            <div class="timeline-period" style="background:rgba(0,212,170,0.1); border-color:rgba(0,212,170,0.2); color:var(--accent3);">2024 – Present</div>
+          </div>
+          <div class="timeline-company">Personal Project — Restaurant Management System</div>
+          <ul class="timeline-achievements">
+            <li>Architecting and developing a complete restaurant digital platform encompassing customer-facing ordering, table reservations, gift cards, and an admin control dashboard.</li>
+            <li>Integrated Razorpay payment gateway with full refund processing logic, webhook validation, and error handling for a production-grade checkout experience.</li>
+            <li>Built Supabase backend with row-level security, real-time data subscriptions, and automated email notifications for reservation confirmations.</li>
+            <li>Applied on-site technical SEO from day one: semantic HTML, structured data, canonical tags, and Core Web Vitals optimization baked into the architecture.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Supabase</span>
+            <span class="timeline-tag">Razorpay</span>
+            <span class="timeline-tag">JavaScript</span>
+            <span class="timeline-tag">SEO-first Architecture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT PROJECT -->
+<section id="project">
+  <div class="container">
+    <div class="section-tag">Featured Work</div>
+    <h2 class="section-title fade-up">Current <span class="gradient-text2">Project</span></h2>
+    <p class="section-sub fade-up fade-up-delay-1">A production-grade full-stack system built with real-world complexity — from payments to admin controls.</p>
+    <div class="project-showcase">
+      <div class="project-visual fade-up">
+        <div class="project-visual-title">🍽️ Restaurant Website &<br>Management System</div>
+        <div class="project-visual-sub">Full-Stack · In Active Development · SEO-Optimized</div>
+        <div class="project-feature-grid">
+          <div class="project-feature"><div class="project-feature-dot"></div>Online Food Ordering</div>
+          <div class="project-feature"><div class="project-feature-dot"></div>Table Reservations</div>
+          <div class="project-feature"><div class="project-feature-dot"></div>Razorpay Payments</div>
+          <div class="project-feature"><div class="project-feature-dot"></div>Refund Processing</div>
+          <div class="project-feature"><div class="project-feature-dot"></div>Gift Card System</div>
+          <div class="project-feature"><div class="project-feature-dot"></div>Admin Dashboard</div>
+          <div class="project-feature"><div class="project-feature-dot"></div>Email Notifications</div>
+          <div class="project-feature"><div class="project-feature-dot"></div>SEO Optimization</div>
+          <div class="project-feature"><div class="project-feature-dot"></div>Role-Based Access</div>
+          <div class="project-feature"><div class="project-feature-dot"></div>Pickup Validation</div>
+        </div>
+      </div>
+      <div class="project-info fade-up fade-up-delay-1">
+        <h3>End-to-End Restaurant Digital Platform</h3>
+        <p>A complete digital infrastructure for modern restaurant operations — combining a polished customer-facing web experience with robust backend management, real-time data, and integrated payment processing.</p>
+        <div class="project-tech">
+          <span class="tech-pill">Supabase</span>
+          <span class="tech-pill">Razorpay</span>
+          <span class="tech-pill">HTML/CSS</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">Claude AI</span>
+          <span class="tech-pill">Lovable</span>
+        </div>
+        <div class="project-highlights">
+          <div class="project-highlight-item">
+            <div class="phi-icon">💳</div>
+            <div class="phi-text">
+              <strong>Payment Infrastructure</strong>
+              <span>Full Razorpay flow: orders, refunds, webhooks & validation logic</span>
+            </div>
+          </div>
+          <div class="project-highlight-item">
+            <div class="phi-icon">🗄️</div>
+            <div class="phi-text">
+              <strong>Backend Architecture</strong>
+              <span>Supabase with RLS, real-time subs & automated email via Edge Functions</span>
+            </div>
+          </div>
+          <div class="project-highlight-item">
+            <div class="phi-icon">📈</div>
+            <div class="phi-text">
+              <strong>SEO-First Build</strong>
+              <span>Semantic HTML, schema markup, Core Web Vitals, structured data</span>
+            </div>
+          </div>
+          <div class="project-highlight-item">
+            <div class="phi-icon">🤖</div>
+            <div class="phi-text">
+              <strong>AI-Assisted Development</strong>
+              <span>Leveraging Claude & Lovable for accelerated feature delivery and debugging</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="#" class="btn-primary">View Live Demo →</a>
+          <a href="#" class="btn-secondary">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-tag">Portfolio</div>
+    <h2 class="section-title fade-up">Projects & <span class="gradient-text">Work</span></h2>
+    <p class="section-sub fade-up fade-up-delay-1">A selection of SEO campaigns, web projects, and digital marketing work.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-card stagger-child">
+        <div class="portfolio-img" style="--c1:#0a1a35; --c2:#0a2a1a;">🍽️</div>
+        <div class="portfolio-body">
+          <div class="portfolio-category">Full-Stack · In Progress</div>
+          <div class="portfolio-title">Restaurant Management System</div>
+          <div class="portfolio-desc">Complete restaurant digital platform with ordering, reservations, payments, and admin dashboard built with Supabase and Razorpay.</div>
+          <div class="portfolio-actions">
+            <a href="#project" class="pa-btn primary">View Details</a>
+            <a href="#" class="pa-btn">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card stagger-child">
+        <div class="portfolio-img" style="--c1:#1a1225; --c2:#200a30;">📈</div>
+        <div class="portfolio-body">
+          <div class="portfolio-category">SEO Campaign</div>
+          <div class="portfolio-title">Multi-Client Organic Growth</div>
+          <div class="portfolio-desc">Managed on-page and off-page SEO campaigns for 10+ client websites, driving measurable SERP visibility improvements across competitive niches.</div>
+          <div class="portfolio-actions">
+            <a href="#contact" class="pa-btn primary">Case Study</a>
+            <a href="#experience" class="pa-btn">Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card stagger-child">
+        <div class="portfolio-img" style="--c1:#1a1505; --c2:#2a1a0a;">🔍</div>
+        <div class="portfolio-body">
+          <div class="portfolio-category">Technical SEO</div>
+          <div class="portfolio-title">Core Web Vitals Optimization</div>
+          <div class="portfolio-desc">Technical audits and performance optimization projects achieving 30–40% page speed improvements through structured data, crawl fixes, and asset optimization.</div>
+          <div class="portfolio-actions">
+            <a href="#contact" class="pa-btn primary">Request Info</a>
+            <a href="#contact" class="pa-btn">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-tag" style="margin: 0 auto 1.25rem;">Testimonials</div>
+    </div>
+    <h2 class="section-title fade-up" style="text-align:center;">What People <span class="gradient-text">Say</span></h2>
+    <p class="section-sub fade-up fade-up-delay-1" style="text-align:center; margin: 0 auto;">Feedback from colleagues, managers, and collaborators I've had the pleasure of working with.</p>
+    <div class="testimonials-grid" style="margin-top:3rem;">
+      <div class="testimonial-card stagger-child">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">Jayaprakash consistently delivered above expectations on SEO campaigns. His ability to combine keyword research with content strategy showed real depth — not just someone running checklists.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SM</div>
+          <div>
+            <div class="testimonial-name">Senior Manager</div>
+            <div class="testimonial-role">SEOCZAR IT Services Pvt. Ltd</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card stagger-child">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">Reliable, detail-oriented, and proactive about learning new tools. He brought both technical SEO discipline and creative thinking to every project we collaborated on.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">TC</div>
+          <div>
+            <div class="testimonial-name">Team Colleague</div>
+            <div class="testimonial-role">Digital Marketing Team</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card stagger-child">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">The website management and SEO work delivered clear, trackable improvements. His reporting was transparent and he communicated changes in a way non-technical stakeholders could understand.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">CL</div>
+          <div>
+            <div class="testimonial-name">Client</div>
+            <div class="testimonial-role">E-Commerce Website Owner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-tag">Contact</div>
+    <h2 class="section-title fade-up">Let's <span class="gradient-text">Connect</span></h2>
+    <div class="contact-grid" style="margin-top:3rem;">
+      <div class="contact-info fade-up">
+        <h3>Open to New Opportunities</h3>
+        <p>Looking for an SEO professional who combines technical rigor with strategic thinking? I'm available for full-time roles, contract projects, and freelance SEO/web management engagements.</p>
+        <div class="contact-items">
+          <a href="tel:+919938072610" class="contact-item">
+            <div class="ci-icon">📞</div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <div class="ci-val">+91 9938072610</div>
+            </div>
+          </a>
+          <a href="mailto:sahoojayaprakash1998@gmail.com" class="contact-item">
+            <div class="ci-icon">✉️</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-val">sahoojayaprakash1998@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/sahoo-jayaprakash" target="_blank" class="contact-item">
+            <div class="ci-icon">💼</div>
+            <div>
+              <div class="ci-label">LinkedIn</div>
+              <div class="ci-val">linkedin.com/in/sahoo-jayaprakash</div>
+            </div>
+          </a>
+          <div class="contact-item" style="cursor:default;">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Location</div>
+              <div class="ci-val">Bhubaneswar, Odisha, India</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/sahoo-jayaprakash" target="_blank" class="social-link" title="LinkedIn">in</a>
+          <a href="mailto:sahoojayaprakash1998@gmail.com" class="social-link" title="Email">@</a>
+          <a href="tel:+919938072610" class="social-link" title="Call">📞</a>
+        </div>
+      </div>
+      <div class="fade-up fade-up-delay-1">
+        <div class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="Your full name" id="fname">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" placeholder="your@email.com" id="femail">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-input" placeholder="What's this about?" id="fsubject">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Tell me about your project or opportunity..." id="fmessage"></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm()">
+            <span id="submitText">Send Message ✉️</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2025 Sahoo Jayaprakash Prafulla Kumar · SEO Executive & Digital Specialist · Bhubaneswar, Odisha</div>
+  <div class="footer-links">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+// LOADER
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 1800);
+});
+
+// THEME
+let isDark = true;
+document.getElementById('themeToggle').addEventListener('click', () => {
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.getElementById('themeToggle').textContent = isDark ? '🌙' : '☀️';
+});
+
+// MOBILE MENU
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+function closeMobile() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// STAGGER
+const staggerObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const children = entry.target.querySelectorAll('.stagger-child');
+      children.forEach((child, i) => {
+        setTimeout(() => child.classList.add('visible'), i * 60);
+      });
+      staggerObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('#skillsGrid, .portfolio-grid, .testimonials-grid').forEach(el => staggerObserver.observe(el));
+
+// SKILL BARS
+const skillBarObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+        bar.style.width = bar.getAttribute('data-w');
+      });
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('#skillsGrid').forEach(el => skillBarObserver.observe(el));
+
+// FORM
+function submitForm() {
+  const name = document.getElementById('fname').value;
+  const email = document.getElementById('femail').value;
+  const subject = document.getElementById('fsubject').value;
+  const message = document.getElementById('fmessage').value;
+  if (!name || !email || !message) {
+    alert('Please fill in your name, email, and message.');
+    return;
+  }
+  const btn = document.querySelector('.form-submit');
+  const txt = document.getElementById('submitText');
+  btn.style.opacity = '0.7'; btn.disabled = true;
+  txt.textContent = 'Sending...';
+  const mailto = `mailto:sahoojayaprakash1998@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+  setTimeout(() => {
+    window.location.href = mailto;
+    btn.style.opacity = '1'; btn.disabled = false;
+    txt.textContent = 'Message Sent! ✓';
+    setTimeout(() => { txt.textContent = 'Send Message ✉️'; }, 3000);
+  }, 800);
+}
+
+// DOWNLOAD CV
+document.getElementById('downloadCV').addEventListener('click', (e) => {
+  e.preventDefault();
+  alert('CV download coming soon! In the meantime, connect on LinkedIn or reach out via email.');
+});
+
+// SMOOTH SCROLL for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// NAV SCROLL EFFECT
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 60) {
+    nav.style.background = 'rgba(8,11,20,0.95)';
+  } else {
+    nav.style.background = 'rgba(8,11,20,0.7)';
+  }
+});
+</script>
+</body>
+</html>
